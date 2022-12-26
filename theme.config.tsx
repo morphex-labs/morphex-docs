@@ -1,18 +1,20 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import React from "react";
+import { DocsThemeConfig } from "nextra-theme-docs";
+import Logo from "./public/images/logo.svg";
+import Image from "next/image";
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <Image src={Logo} width={50} height={50} alt="Morphex Labs" />,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: "https://github.com/morphex-labs/morphex",
   },
   chat: {
-    link: 'https://discord.com',
+    link: "https://discord.com/invite/TR7zzfT2ru",
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: "https://github.com/morphex-labs/morphex-docs/",
   footer: {
-    text: 'Nextra Docs Template',
+    text: "Morphex Labs Docs",
   },
-}
+};
 
-export default config
+export default config;
