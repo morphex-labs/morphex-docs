@@ -1,8 +1,11 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "distribution": "Distribution Suggestion",
+  "project-vision": "Our Vision",
+  "tokenomics": "Tokenomics",
+  "mlp": "MLP",
+  "rewards": "Rewards",
+  "trading-guide": "Trading Guide",
+  "contracts": "Contracts",
   "about": {
     "title": "About",
     "type": "page"
