@@ -1,0 +1,71 @@
+# Contracts
+
+## Deployment addresses
+
+MPX: <br />
+Vault: <br />
+Router:<br />
+PositionRouter:<br />
+OrderBook:<br />
+Reader:<br />
+RewardReader:<br />
+OrderBookReader:<br />
+StakedMpx:<br />
+StakedMlp:<br />
+MlpManager:<br />
+RewardRouter:<br />
+MlpRewardRouter:<br />
+
+## Swap
+
+To execute a **swap**:
+
+- Approve the Router contract for the token and amount you would like to swap
+- Call Router.swap with parameters:
+  - \_path: [tokenIn, tokenOut]
+  - \_amountIn: amount of tokenIn to swap
+  - \_minOut: minimum expected output amount
+  - \_receiver: address of the receiver of tokenOut
+- The function will revert if the amount of tokenOut sent to the receiver is less than \_minOut
+
+To get swap amounts before execution:
+
+- Call Reader.getMaxAmountIn with parameters:
+  - \_vault: address of the vault
+  - \_tokenIn: address of token that will be given
+  - \_tokenOut: address of token to be received
+  - The max amount of tokenIn that can be swapped will be returned
+- Call Reader.getAmountOut with parameters:
+  - \_vault: address of the vault
+  - \_tokenIn: address of token that will be given
+  - \_tokenOut: address of token to be received
+  - \_amountIn: amount of tokenIn to swap
+  - Two values will be returned, the first is the amount out after fees, and the second is the fee amount
+  - The fee amount will be in terms of tokenOut
+
+The **Vault contract** includes a "usdgAmount" for some **calculations** on tokens.
+This amount is updated when **MLP** is **minted** or **redeemed**, and during **swaps** based on the token's price
+at that time. Because of price changes, the **usdgAmount** may not always match the actual **USD value**
+of the tokens in the pool. To fix this, the **usdgAmount** is periodically updated to align
+with the current values.
+
+## Query Available Amounts
+
+The maximum sum of all position sizes is limited by the amount of tokens there are in the pool
+and any additional caps.
+
+To _calculate_ the available amount of **liquidity** for long positions:
+
+- indexToken: the address of the token to long
+- Available amount in tokens: Vault.poolAmounts(indexToken) - Vault.reservedAmounts(indexToken)
+- Available amount in USD: PositionRouter.maxGlobalLongSizes(indexToken) - Vault.guaranteedUsd(indexToken)
+- The available liquidity will be the lower of these two values
+- PositionRouter.maxGlobalLongSizes(indexToken) can be zero, in which case there is no additional cap, and available liquidity is based only on the available amount of tokens
+
+To _calculate_ the **available amount of liquidity** for **short** positions:
+
+- indexToken: the address of the token to short
+- collateralToken: the address of the stablecoin token to be used as collateral
+- Available amount in tokens: Vault.poolAmounts(collateralToken) - Vault.reservedAmounts(collateralToken)
+- Available amount in USD: PositionRouter.maxGlobalShortSizes(indexToken) - Vault.globalShortSizes(indexToken)
+- The available liquidity will be the lower of these two values
