@@ -4,17 +4,14 @@
 
 ## Wallet Connection and Initial Steps
 
-Upon visiting the site, you will need to click “Connect Wallet” in order to **establish
-connection** with the **dApp**, which will then present you with **various wallet options**,
-as well as a basic explanation for new users about wallets (by clicking the question mark icon):
+Upon visiting the site, you will need to click **Connect Wallet** in order to establish connection with the dApp, which will then present you with various wallet options, as well as a basic explanation for new users about wallets (by clicking the question mark icon):
 
 <br />
 <div align="center">
   <img alt="Short / Long position" src="/images/connect_wallet.png" />
 </div>
 
-If this is your first time using Fantom, then you will need to **add the network settings to your wallet**
-of choice:
+If this is your first time using Fantom, then you will need to **add the network settings to your wallet** of choice:
 
 **Network Name**: Fantom Opera <br />
 **RPC URL**: https://rpc.ankr.com/fantom/ <br />
@@ -22,24 +19,20 @@ of choice:
 **Symbol**: FTM <br />
 **Block Explorer URL**: https://ftmscan.com/
 
-For some more information on setting up common wallets for **Fantom**,
-please check this guide from the [Fantom Foundation](https://docs.fantom.foundation/wallet/set-up-metamask).
+For some more information on setting up common wallets for Fantom, please check this guide from the [Fantom Foundation](https://docs.fantom.foundation/wallet/set-up-metamask).
 
-In order to begin trading, you will need to have **FTM** in your **Fantom account** to send transactions.
-Head on over to our **Discord** server and find the **#faucet** channel,
-where _our bot will drip you_ some **free FTM** for gas
-(but make sure to _first purchase some more_ **FTM**, so that you won’t _run out of gas_).
+In order to begin trading, you will need to have **FTM** in your **Fantom account** to send transactions. Head on over to our Discord server and find the **#faucet** channel, where our bot will drip you some **free FTM** for gas (but make sure to _first purchase some more_ **FTM**, so that you won’t _run out of gas_).
 
 ## Swapping
 
 **Morphex** supports both regular **swaps** and **leveraged trading**. In order to swap, click on the
-“Swap” tab on the “Trade” page, allowing you to swap various tokens with **zero price impact**.
+**Swap** tab on the **Trade** page, allowing you to swap various tokens with **zero price impact**.
 
 For more information on leveraged trading, please _read the sections below_.
 
 ## Opening a position
 
-Click on "Long" or "Short" depending on which side you would like to open a leverage position on:
+Click on **Long** or **Short** depending on which side you would like to open a leverage position on:
 
 <br />
 <div align="center">
@@ -47,27 +40,18 @@ Click on "Long" or "Short" depending on which side you would like to open a leve
 </div>
 
 ### Long position
-
 - Earns a profit if the token's price goes up
 - Makes a loss if the token's price goes down
 
 ### Short position
-
 - Earns a profit if the token's price goes down
 - Makes a loss if the token's price goes up
 
 After selecting your position, input the amount you want to trade with and the desired leverage.
 
-When you **open** or **close** a position, you'll pay a **0.1**% fee on the size of the position.
-Additionally, you'll pay a "**Borrow Fee**" every hour that you hold a position.
-This fee is calculated based on the amount of assets you've borrowed and the total assets in the pool,
-and it's expressed as a **percentage** that varies based on **utilization**.
+When you **open** or **close** a position, you'll pay a **0.1%** fee on the size of the position. Additionally, you'll pay a **Borrow Fee** every hour that you hold a position. This fee is calculated based on the amount of assets you've borrowed and the total assets in the pool, and it's expressed as a **percentage** that varies based on **utilization**.
 
-While there's _no price impact on trade_, there may be **slippage** due to **price changes** between
-the time you submit your trade and the time it's confirmed on the blockchain.
-**Slippage** is the _difference between the expected_ and _execution prices of the trade_.
-You can customize your **allowed slippage** by clicking the "Settings" icon next to your
-address in the top right corner of the page.
+While there's no price impact on trade, there may be **slippage** due to **price changes** between the time you submit your trade and the time it's confirmed on the blockchain. **Slippage** is the _difference between the expected_ and _execution prices of the trade_. You can customize your **allowed slippage** by clicking the **Settings** icon next to your address in the top right corner of the page.
 
 <br />
 <div align="center">
@@ -76,49 +60,41 @@ address in the top right corner of the page.
 
 ## Managing Positions
 
-Once you’ve **opened a trade**, you can view it under the “Positions” list and manage it by clicking the
-"..." button to **add** or **remove collateral**.
-This allows you to control your **leverage** and **liquidation price**.
+Once you’ve **opened a trade**, you can view it under the **Positions** list and manage it by clicking the **...** button to **add** or **remove collateral**. This allows you to control your **leverage** and **liquidation price**.
 
-A **snapshot** of the USD value of your **collateral** is taken when you _open a position_ or _add collateral_.
-For example, if you have 1000 **FTM** as collateral and the price of **FTM** is **$0.25**,
-the value of your collateral would be **$250**.
-This value _does not change_ even if the price of **FTM** fluctuates.
+A **snapshot** of the USD value of your **collateral** is taken when you _open a position_ or _add collateral_. For example, if you have 1000 **FTM** as collateral and the price of **FTM** is **$0.25**,
+the value of your collateral would be **$250**. This value _does not change_ even if the price of **FTM** fluctuates.
 
 The **profit** or **loss** you make is based on the size of your position. Using our previous example,
-you have used **$250** to buy **$1250** worth of **FTM** (**5x** leverage long).
-If the price of **FTM** _increases_/_decreases_ by **10**%, you would have a profit/loss of roughly **$125**.
-If in a short position, then you would profit if the price of the asset decreases,
-while making a loss if the price increases.
+you have used **$250** to buy **$1250** worth of **FTM** (**5x** leverage long). If the price of **FTM** _increases_/_decreases_ by **10**%, you would have a profit/loss of roughly **$125**. If in a short position, then you would profit if the price of the asset decreases, while making a loss if the price increases.
 
-The **leverage** of a position is calculated as `(position size) / (position collateral)`.
-You can customize this by clicking the **Settings** icon next to your address to show
-`(position size + PnL) / (position collateral)`.
+The **leverage** of a position is calculated as `(position size) / (position collateral)`. You can customize this by clicking the **Settings** icon next to your address to show `(position size + PnL) / (position collateral)`.
 
-Note that when _adding_ **collateral** to a **long position**, there is a **0.3**% **swap fee**
-for converting the asset to its USD value (to prevent deposits from being used as a zero fee swap).
-This **fee** _does not apply_ to short positions or when _withdrawing_ **collateral** from **long**/**short** positions.
+Note that when _adding_ **collateral** to a **long position**, there is a **0.3**% **swap fee** for converting the asset to its USD value (to prevent deposits from being used as a zero fee swap). This **fee** _does not apply_ to short positions or when _withdrawing_ **collateral** from **long**/**short** positions.
 
 ## Closing a Position
 
 You can close a position partially or completely by clicking on the "Close" button.
 
-For **long** positions, **profits** _are paid_ in the asset you are longing,
-e.g. if you long **FTM** you would **receive your profits in FTM**. For short positions,
-profits _will be paid_ in the same **stablecoin** used when opening the position.
+For **long** positions, **profits** _are paid_ in the asset you are longing, e.g. if you long **FTM** you would **receive your profits in FTM**. For short positions, profits _will be paid_ in the same **stablecoin** used when opening the position.
 
-## Stop-Loss / Take-Profit Orders
+## Order Types
 
-To set a **stop-loss** or **take-profit** order, click on the "Close" button on your open position
-and select the "Trigger" tab. These **orders** will appear in your position's row
-and under the "Orders" tab. You _can edit_ the **trigger price** of these orders if needed.
-If you _close a position manually_, the associated **trigger orders** will _remain open_.
-You will _need to cancel them manually_ as well if you do not want them to be active
-when opening future positions.
+### Market Orders
 
-It’s important to note that orders _are not guaranteed to execute_ and trigger orders
-are market orders that _may not execute_ at the **trigger price**.
-Possible reasons for an order not executing include, but are not limited to:
+A **market order** is a type of trade that is executed at the current oracle price, without incurring any spread for assets like **FTM**. However, when trading long tail assets (when they are added), such as LINK for **example**, there may be a small spread added. **Market orders** are the default option for all traders, and are ideal for those who wish to enter the market immediately.
+
+### Limit Orders
+
+A **limit order** is a type of trade that is executed only when the market price reaches a specific level. For a **long position**, this means that the order is executed when the ask price is less than or equal to a specified price. For a **short position**, **limit orders** are executed when the bid price is greater than or equal to a specified price. These orders are useful for traders who want to enter a position, but only when a certain target price is reached. The fee for these orders will be more than a market order to pay for the keeper costs.
+
+### Stop-loss/Take-profit
+
+In addition to limit orders, there are also **stop-loss** and **take-profit** orders. A stop-loss order is a type of limit order that automatically closes a position when it reaches a certain amount of capital loss. A take-profit order, on the other hand, is a limit order that closes a position when it reaches a certain amount of capital gain. These types of orders are typically placed by traders who already have a position open and want to protect their profits or limit their losses.
+
+To set a **stop-loss** or **take-profit** order, click on the "Close" button on your open position and select the "Trigger" tab. These **orders** will appear in your position's row and under the "Orders" tab. You _can edit_ the **trigger price** of these orders if needed. If you _close a position manually_, the associated **trigger orders** will _remain open_. You will _need to cancel them manually_ as well if you do not want them to be active when opening future positions.
+
+It’s important to note that orders _are not guaranteed to execute_ and trigger orders are market orders that _may not execute_ at the **trigger price**. Possible reasons for an order not executing include, but are not limited to:
 
 - the **mark price** (an aggregate of exchange prices) not reaching the specified price
 - the **specified price** being reached but not for long enough to execute
@@ -128,9 +104,7 @@ Possible reasons for an order not executing include, but are not limited to:
 
 **Liquidations** happen when a trader has **insufficient funds** to keep a **leveraged trade** open.
 
-The **liquidation price** is the price at which (**collateral** - **losses** - **borrow fee**)
-is _less than_ **1**% of your **position's size**. If the **token's price** reaches this point,
-your position _will be automatically closed_.
+The **liquidation price** is the price at which (**collateral** - **losses** - **borrow fee**) is _less than_ **1**% of your **position's size**. If the **token's price** reaches this point, your position _will be automatically closed_.
 
 The **liquidation price** _can change over time_ due to the **borrow fee**, especially if you use
 a **higher leverage** and _keep the position open_ for _longer periods of time_.
@@ -141,30 +115,35 @@ and **fees** _are subtracted_, that amount _will be returned to your account_.
 ## Pricing
 
 **Trades** on **Morphex** _do not affect the price_, so you can _make_ **large trades** at the **mark price**.
-During times of **high volatility**, there may be a spread between the **Chainlink price**
-and the **median price** of **reference exchanges**.
+During times of **high volatility**, there may be a spread between the **Chainlink price** and the **median price** of **reference exchanges**.
 
-The **mark prices** are displayed next to the market name. If you have a **long position**,
-it _will be opened_ at the **higher price** and _closed_ at the **lower price**. If you have a **short position**,
-it _will be opened_ at the lower price and _closed_ at the **higher price**.
+The **mark prices** are displayed next to the market name. If you have a **long position**, it _will be opened_ at the **higher price** and _closed_ at the **lower price**. If you have a **short position**, it _will be opened_ at the lower price and _closed_ at the **higher price**.
 
-The **TradingView chart** can be customised to show data from various exchanges,
-by default **Binance** will be used.
+## Potential Slippage
+
+Our decentralized perpetual trading platform operates without the traditional design of an orderbook or AMM, allowing for trades to be settled at the oracle price without any impact on the price. However, it is important to note that there may be some **slippage**, which is the difference between the intended and actual execution price, due to price movements between the submission and confirmation of a trade on the blockchain. To mitigate this, traders can set a **slippage tolerance**, with a default of **0.3%**, which can be adjusted by going to **Settings** under the dropdown icon next to your address in the top right corner of the page. Keep in mind, if the slippage tolerance is set too low, e.g. below **0.5%**, there is a risk of failed orders during periods of high market volatility.
 
 ## Fees
 
-The **cost** to _open or close_ a position is **0.1**% of the position size.
+### Spot Trading
 
-The **collateral** for **long** positions is the **token** being longed, and the **collateral**
-for **short** positions is a **supported stablecoin** (e.g. **USDC**, **USDT**, **DAI**, or **FRAX**).
-If a **swap** is needed when opening or closing a position, the **regular swap fee**
-(**0.2**% to **0.8**% of the collateral size) _will apply_.
+Spot trading fees will vary depending on the assets being swapped. Low fees will be used to incentivize trades that cause productive assets to be deposited and unproductive assets to be withdrawn. In contrast, there will be a high fee on trades that cause unproductive assets to be deposited and productive assets to be withdrawn. This will move the allocation of assets across liquidity pools to the optimal levels.
 
-There is also an **execution fee** detailed below which is used to pay for the **blockchain network costs**.
+-   Base spot fee for volatile assets: 0.2%
+-   Base spot fee for stable assets: 0.02%
 
-## Execution Fee
+### Leveraged Trading
+
+-   The cost to open or close a leveraged position is 0.1% of the position size.
+-   The collateral for long positions is the token being longed, and the collateral for short positions is a supported stablecoin (e.g. USDC, USDT, DAI). If a swap is needed when opening or closing a position, the regular swap fee (0.2% to 0.8% of the collateral size) will apply. This is to prevent deposits from being used as a zero fee swap. Withdrawing of collateral from longs and shorts do not have this fee.
+-   Traders will be charged a borrowing fee on the total value of their position. The fee rate will increase as the utilization of a specific asset in the liquidity pool increases. This is to deter the utilization of any given asset from reaching 100% and to maintain liquidity in the pool. The borrowing fees will be deducted from the user's margin when their position is settled. The fee rate will vary continually based on utilization, calculated as (assets borrowed) / (total assets in the pool) * 0.01%.
+-   There is also an execution fee detailed below which is used to pay for the blockchain network costs.
+
+### Execution Fee
 
 There are **two transactions** involved in opening / closing / editing a position:
 
-- User sends the first transaction that requests to **open**, **close**, **deposit collateral** or **withdraw collateral**
-- **Keepers** observe the blockchain for these requests then execute them
+1. User sends the first transaction that requests to **open**, **close**, **deposit collateral** or **withdraw collateral**
+2. **Keepers** observe the blockchain for these requests then execute them
+
+The execution fee is detailed when confirming the creation of a position.

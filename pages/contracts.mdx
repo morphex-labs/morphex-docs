@@ -1,71 +1,215 @@
-# Contracts
+# **Contracts**
 
-## Deployment addresses
+**Deployment addresses**
+- MPX:
+- Vault:
+- Router:
+- PositionRouter:
+- OrderBook:
+- Reader:
+- RewardReader:
+- OrderBookReader:
+- StakedMpx:
+- StakedMlp:
+- MlpManager:
+- RewardRouter:
+- MlpRewardRouter:
 
-MPX: <br />
-Vault: <br />
-Router:<br />
-PositionRouter:<br />
-OrderBook:<br />
-Reader:<br />
-RewardReader:<br />
-OrderBookReader:<br />
-StakedMpx:<br />
-StakedMlp:<br />
-MlpManager:<br />
-RewardRouter:<br />
-MlpRewardRouter:<br />
+## **Swap**
 
-## Swap
-
-To execute a **swap**:
-
+To execute a swap:
 - Approve the Router contract for the token and amount you would like to swap
-- Call Router.swap with parameters:
-  - \_path: [tokenIn, tokenOut]
-  - \_amountIn: amount of tokenIn to swap
-  - \_minOut: minimum expected output amount
-  - \_receiver: address of the receiver of tokenOut
-- The function will revert if the amount of tokenOut sent to the receiver is less than \_minOut
+- Call `Router.swap` with parameters:
+	- `_path`: `[tokenIn, tokenOut]`
+	- `_amountIn`: amount of `tokenIn` to swap
+	- `_minOut`: minimum expected output amount
+	- `_receiver`: address of the receiver of `tokenOut`
+- The function will revert if the amount of `tokenOut` sent to the receiver is less than `_minOut`
 
 To get swap amounts before execution:
+-   Call `Reader.getMaxAmountIn` with parameters:
+	- `_vault`: address of the vault
+	- `_tokenIn`: address of token that will be given
+	- `_tokenOut`: address of token to be received
+	- The max amount of tokenIn that can be swapped will be returned
+- Call `Reader.getAmountOut` with parameters:
+	- `_vault`: address of the vault
+	- `_tokenIn`: address of token that will be given
+	- `_tokenOut`: address of token to be received
+	- `_amountIn`: amount of tokenIn to swap
+	- Two values will be returned, the first is the amount out after fees, and the second is the fee amount
+	- The fee amount will be in terms of `tokenOut`
 
-- Call Reader.getMaxAmountIn with parameters:
-  - \_vault: address of the vault
-  - \_tokenIn: address of token that will be given
-  - \_tokenOut: address of token to be received
-  - The max amount of tokenIn that can be swapped will be returned
-- Call Reader.getAmountOut with parameters:
-  - \_vault: address of the vault
-  - \_tokenIn: address of token that will be given
-  - \_tokenOut: address of token to be received
-  - \_amountIn: amount of tokenIn to swap
-  - Two values will be returned, the first is the amount out after fees, and the second is the fee amount
-  - The fee amount will be in terms of tokenOut
+The Vault contract includes a `usdgAmount` for some calculations on tokens. This amount is updated when **MLP** is minted or redeemed, and during swaps based on the token's price at that time. Because of price changes, the `usdgAmount` may not always match the actual USD value of the tokens in the pool. To fix this, the `usdgAmount` is periodically updated to align with the current values.
 
-The **Vault contract** includes a "usdgAmount" for some **calculations** on tokens.
-This amount is updated when **MLP** is **minted** or **redeemed**, and during **swaps** based on the token's price
-at that time. Because of price changes, the **usdgAmount** may not always match the actual **USD value**
-of the tokens in the pool. To fix this, the **usdgAmount** is periodically updated to align
-with the current values.
+## **Query Available Amounts**
 
-## Query Available Amounts
+The maximum sum of all position sizes is limited by the amount of tokens there are in the pool and any additional caps.
 
-The maximum sum of all position sizes is limited by the amount of tokens there are in the pool
-and any additional caps.
-
-To _calculate_ the available amount of **liquidity** for long positions:
-
-- indexToken: the address of the token to long
-- Available amount in tokens: Vault.poolAmounts(indexToken) - Vault.reservedAmounts(indexToken)
-- Available amount in USD: PositionRouter.maxGlobalLongSizes(indexToken) - Vault.guaranteedUsd(indexToken)
+To calculate the available amount of liquidity for long positions:
+- `indexToken`: the address of the token to long
+- Available amount in tokens: `Vault.poolAmounts(indexToken)` - `Vault.reservedAmounts(indexToken)`
+- Available amount in USD: `PositionRouter.maxGlobalLongSizes(indexToken)` - `Vault.guaranteedUsd(indexToken)`
 - The available liquidity will be the lower of these two values
-- PositionRouter.maxGlobalLongSizes(indexToken) can be zero, in which case there is no additional cap, and available liquidity is based only on the available amount of tokens
+- `PositionRouter.maxGlobalLongSizes(indexToken)` can be zero, in which case there is no additional cap, and available liquidity is based only on the available amount of tokens
 
-To _calculate_ the **available amount of liquidity** for **short** positions:
-
-- indexToken: the address of the token to short
-- collateralToken: the address of the stablecoin token to be used as collateral
-- Available amount in tokens: Vault.poolAmounts(collateralToken) - Vault.reservedAmounts(collateralToken)
-- Available amount in USD: PositionRouter.maxGlobalShortSizes(indexToken) - Vault.globalShortSizes(indexToken)
+To calculate the available amount of liquidity for short positions:
+- `indexToken`: the address of the token to short
+- `collateralToken`: the address of the stablecoin token to be used as collateral
+- Available amount in tokens: `Vault.poolAmounts(collateralToken)` - `Vault.reservedAmounts(collateralToken)`
+- Available amount in USD: `PositionRouter.maxGlobalShortSizes(indexToken)` - `Vault.globalShortSizes(indexToken)`
 - The available liquidity will be the lower of these two values
+
+## **Opening / Increasing a Position**
+To open or increase the size of an existing position:
+- Approve the `PositionRouter` as a Router plugin for your account
+	- `Router.approvePlugin(PositionRouter address)`
+- Approve the Router contract for the token and amount you would deposit as collateral for the position
+- Call `PositionRouter.createIncreasePosition` with parameters:
+	- `_path`: `[collateralToken]` or `[tokenIn, collateralToken]` if a swap is needed
+	- `_indexToken`: the address of the token you want to long or short
+	- `_amountIn`: the amount of tokenIn you want to deposit as collateral
+	- `_minOut`: the min amount of collateralToken to swap for
+	- `_sizeDelta`: the USD value of the change in position size
+	- `_isLong`: whether to long or short
+	- `_acceptablePrice`: the USD value of the max (for longs) or min (for shorts) index price acceptable when executing the request
+	- `_executionFee`: can be set to `PositionRouter.minExecutionFee`
+	- `_referralCode`: referral code for affiliate rewards and rebates
+	- `_callbackTarget`: an optional callback contract, this contract will be called on request execution or cancellation
+- After this transaction is sent a keeper will execute the request, and the request will either be executed or canceled
+- If the position cannot be increased for reasons such as the `_acceptablePrice` not being fulfillable or there being insufficient liquidity then the request will be canceled and funds will be sent back to the `msg.sender` that called `PositionRouter.createIncreasePosition`
+- `_minOut` can be zero if no swap is required
+- USD values for `_sizeDelta` and `_price` are multiplied by (10 ** 30), so for example to open a long position of size 1000 USD, the value 1000 * (10 ** 30) should be used
+
+## **Closing / Decreasing a Position**
+
+To close or decrease an existing position:
+- Call PositionRouter.createDecreasePosition with parameters:
+	- `_path`: `[collateralToken]` or `[collateralToken, tokenOut]` if a swap is needed
+	- `_indexToken`: the index token of the position
+	- `_collateralDelta`: the amount of collateral in USD value to withdraw
+	- `_sizeDelta`: the USD value of the change in position size
+	- `_isLong`: whether the position is a long or short
+	- `_receiver`: the address to receive the withdrawn tokens
+	- `_acceptablePrice`: the USD value of the min (for longs) or max (for shorts) index price acceptable when executing the request
+	- `_minOut`: the min output token amount
+	- `_executionFee`: can be set to `PositionRouter.minExecutionFee`
+	- `_withdrawETH`: only applicable if WFTM will be withdrawn, the WFTM will be unwrapped to FTM if this is set to true
+	- `_callbackTarget`: an optional callback contract, this contract will be called on request execution or cancellation
+- After this transaction is sent a keeper will execute the request, and the request will either be executed or canceled
+- If the position cannot be decreased for reasons such as the `_acceptablePrice` not being fulfillable then the request will be canceled and there will be no change to the position
+
+## **Positions List**
+
+A list of position details can be retrieved by calling `Reader.getPositions`
+- `_vault`: the vault contract address
+- `_account`: the account of the user
+- `_collateralTokens`: an array of `collateralTokens`
+- `_indexTokens`: an array of indexTokens
+- `_isLong`: an array of whether the position is a long position
+
+The returned positions will be in the order of the query, for example, given the following inputs:
+- `_collateralTokens`: `[WBTC.address, WETH.address, USDC.address]`
+- `_indexTokens`: `[WBTC.address, WETH.address, WBTC.address]`
+- `_isLong`: `[true, true, false]`
+
+The position details would be returned for
+- Long BTC position, `positionIndex: 0`
+- Long ETH position, `positionIndex: 1`
+- Short BTC position, `positionIndex: 2`
+
+The returned array would be a list of values ordered by the positions:
+- `size`
+	- position size in USD
+	- value at: `positionIndex` * 9
+- `collateral`
+	- position collateral in USD
+	- value at: `positionIndex` * 9 + 1
+- `averagePrice`
+	- average entry price of the position in USD
+	- value at: `positionIndex` * 9 + 2
+- `entryFundingRate`
+	- a snapshot of the cumulative funding rate at the time the position was entered
+	- value at: `positionIndex` * 9 + 3
+- `hasRealisedProfit`
+	- 1 if the position has a positive realised profit, 0 otherwise
+	- value at: `positionIndex` * 9 + 4
+- `realisedPnl`
+	- the realised PnL for the position in USD
+	- value at: `positionIndex` * 9 + 5
+- `lastIncreasedTime`
+	- timestamp of the last time the position was increased
+	- value at: `positionIndex` * 9 + 6
+- `hasProfit`
+	- 1 if the position is currently in profit, 0 otherwise
+	- value at: `positionIndex` * 9 + 7
+- `delta`
+	- amount of current profit or loss of the position in USD
+	- value at: `positionIndex` * 9 + 8
+
+## **Buying / Selling MLP**
+
+Buying and selling **MLP** can be done through the `GlpRewardRouter`.
+To buy **MLP**, call `mintAndStakeGlp`
+- `_token`: the token to buy **MLP** with
+- `_amount`: the amount of token to use for the purchase
+- `_minUsdg`: the minimum acceptable USD value of the **MLP** purchased
+- `_minGlp`: the minimum acceptable **MLP** amount
+
+To sell **MLP**, `unstakeAndRedeemGlp`
+- `_tokenOut`: the token to sell **MLP** for
+- `_glpAmount`: the amount of **MLP** to sell
+- `_minOut`: the minimum acceptable amount of `tokenOut` to be received
+- `_receiver`: the address to send `tokenOut` to
+- Note that **MLP** can only be redeemed up to the `reservedAmount`, which is based on the amount of open interest, if the pool has been fully redeemed up to the `reservedAmount` then redeemers will need to wait for positions to close before further redemptions can be done, in this scenario the borrowing fee APR would be very high so liquidity providers will be incentivized to mint **MLP** and traders will be incentivized to close positions
+
+The price of **MLP** can be retrieved from the `GlpManager` contract.
+- The buy price would be `getAum(true)` / `glpSupply`
+- The sell price would be `getAum(false)` / `glpSupply`
+`glpSupply` would be the `totalSupply` value of the **MLP** token.
+
+## **Transferring Staked MLP**
+
+When **MLP** is bought it is automatically staked and when it is sold it is automatically unstaked, for integrations adding **MLP**, the **StakedGlp** contract can be used to transfer staked MLP tokens.
+
+**StakedGlp** behaves like a regular **ERC20 token**, the user can call approve on it to approve your contract, then your contract can call transferFrom to transfer the **MLP** tokens to any receiving account or contract. When transferring, the **StakedGlp** contract will unstake **MLP** from the user and stake the **MLP** for the receiving account, the receiving account or contract would then start earning rewards which can be compounded or claimed by calling `handleRewards` on the RewardRouter contract.
+
+Since there is a 15 min cooldown duration after minting **MLP**, this amount of time needs to pass for the user before transferFrom can be called for their account.
+
+## **MLP Price**
+
+The price of **MLP** is based on the total worth of all tokens in the pool and factors in pending profits and losses from all currently opened positions.
+
+- Buy price: `glpManager.getPrice(true)`
+- Sell price: `glpManager.getPrice(false)`
+
+Since there might be a spread for token pricing, passing in true into the getPrice function returns the maximum price at that point in time, while passing in false returns the minimum price.
+
+## **Staking**
+
+The **RewardRouter** contract handles the necessary actions needed for staking in a single transaction.
+
+When staking **MPX**:
+
+- The **RewardRouter** deposits the **MPX** token into the **StakedGmxTracker** contract
+- The **StakedGmxTracker** issues itself as a token for each token deposited
+- **esMPX** can similarly be deposited into the **StakedGmxTracker**
+- The **StakedGmxTracker** distributes **esMPX** to staked tokens
+- After this step, the **RewardRouter** deposits the **StakedGmxTracker** tokens into the **BonusGmxTracker**
+- The **BonusGmxTracker** distributes **Multiplier Points** to staked tokens
+- Finally, the **BonusGmxTracker** tokens are deposited into the **FeeGmxTracker** which distributes FTM to **staked** tokens
+
+When minting **MLP**:
+- The **RewardRouter** sends the funds to be deposited to the **GlpManager** and mints MLP ****tokens
+- The **RewardRouter** then deposits the **MLP** tokens to the **FeeGlpTracker** which distributes **FTM** to the staked tokens
+- Finally the **RewardRouter** deposits the **FeeGlpTracker** tokens into the **StakedGlpTracker** which distributes **esMPX** to staked tokens
+
+To get the deposit balances for an account you can use:
+- `RewardTracker.depositBalances(account, token),` or
+- `RewardReader.getDepositBalances(account, depositTokens, rewardTrackers)`
+
+To get claimable rewards you can use `RewardReader.getStakingInfo(account rewardTrackers),` this returns an array of uint256 values in the order:
+- Claimable rewards
+- Amount of reward token distribution per second
+- The average staked amount for the account
+- Total rewards distributed to account
