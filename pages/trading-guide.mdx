@@ -40,12 +40,12 @@ Click on **Long** or **Short** depending on which side you would like to open a 
 </div>
 
 ### Long position
-- Earns a profit if the token's price goes up
-- Makes a loss if the token's price goes down
+- Earns a profit if the token's price *goes up*
+- Makes a loss if the token's price *goes down*
 
 ### Short position
-- Earns a profit if the token's price goes down
-- Makes a loss if the token's price goes up
+- Earns a profit if the token's price *goes down*
+- Makes a loss if the token's price *goes up*
 
 After selecting your position, input the amount you want to trade with and the desired leverage.
 
@@ -95,7 +95,6 @@ In addition to limit orders, there are also **stop-loss** and **take-profit** or
 To set a **stop-loss** or **take-profit** order, click on the "Close" button on your open position and select the "Trigger" tab. These **orders** will appear in your position's row and under the "Orders" tab. You _can edit_ the **trigger price** of these orders if needed. If you _close a position manually_, the associated **trigger orders** will _remain open_. You will _need to cancel them manually_ as well if you do not want them to be active when opening future positions.
 
 It’s important to note that orders _are not guaranteed to execute_ and trigger orders are market orders that _may not execute_ at the **trigger price**. Possible reasons for an order not executing include, but are not limited to:
-
 - the **mark price** (an aggregate of exchange prices) not reaching the specified price
 - the **specified price** being reached but not for long enough to execute
 - no **keeper** picking up the order for execution.
@@ -136,13 +135,12 @@ Spot trading fees will vary depending on the assets being swapped. Low fees will
 
 -   The cost to open or close a leveraged position is 0.1% of the position size.
 -   The collateral for long positions is the token being longed, and the collateral for short positions is a supported stablecoin (e.g. USDC, USDT, DAI). If a swap is needed when opening or closing a position, the regular swap fee (0.2% to 0.8% of the collateral size) will apply. This is to prevent deposits from being used as a zero fee swap. Withdrawing of collateral from longs and shorts do not have this fee.
--   Traders will be charged a borrowing fee on the total value of their position. The fee rate will increase as the utilization of a specific asset in the liquidity pool increases. This is to deter the utilization of any given asset from reaching 100% and to maintain liquidity in the pool. The borrowing fees will be deducted from the user's margin when their position is settled. The fee rate will vary continually based on utilization, calculated as (assets borrowed) / (total assets in the pool) * 0.01%.
+-   Traders will be charged a borrowing fee on the total value of their position. The fee rate will increase as the utilization of a specific asset in the liquidity pool increases. This is to deter the utilization of any given asset from reaching 100% and to maintain liquidity in the pool. The borrowing fees will be deducted from the user's margin when their position is settled. The fee rate will vary continually based on utilization, calculated as `(assets borrowed) / (total assets in the pool) * 0.01%`.
 -   There is also an execution fee detailed below which is used to pay for the blockchain network costs.
 
 ### Execution Fee
 
 There are **two transactions** involved in opening / closing / editing a position:
-
 1. User sends the first transaction that requests to **open**, **close**, **deposit collateral** or **withdraw collateral**
 2. **Keepers** observe the blockchain for these requests then execute them
 
