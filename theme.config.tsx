@@ -30,7 +30,7 @@ const config: DocsThemeConfig = {
   banner: {
     key: "1.0-release",
     text: (
-      <a href="https://morphex-labs.vercel.app/" target="_blank">
+      <a href="https://morphex.trade/" target="_blank">
         🎉 Morphex v1.0.0 is released. Visit site →
       </a>
     ),
