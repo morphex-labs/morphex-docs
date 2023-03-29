@@ -15,11 +15,11 @@ To create a *referral code*, you need to follow these steps:
 
 Once you have your *referral code*, you can copy the *referral link* and **share it** with others on social media, messaging apps, or any other platform you prefer. When someone clicks on your *referral link*, their account will be linked to your *referral code*, and you will start earning *rebates* whenever they trade.
 
-## **Rebates and discounts**
+## Rebates and discounts
 
 The *rebates* and *discounts* offered through the *referral program* apply to the **opening** and **closing fees** for leverage trading on **Morphex**. The opening and closing fees are **0.1%** on Morphex, and there is **no price impact** for trades and **zero spread** for tokens like **BTC** and **ETH**. *Rebates* are calculated **before** user *discounts*, which means *referrers* earn on the **full maker fee**, and from what would otherwise be *spread* on other exchanges. You will receive *rebates* in **FTM**, and your *rebates history* will be viewable on the *referrals page*. Note that the *referral program* is **subject to change** as it is determined by the **token holders** of **MPX**.
 
-## **Tiers**
+## Tiers
 
 The *referral program* has **three tiers**, which provide different levels of *discounts* and *rebates*:
 
