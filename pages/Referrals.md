@@ -30,7 +30,7 @@ The *referral program* has **three tiers**, which provide different levels of *d
 Anyone can create a **Tier 1** code, but to upgrade to **Tier 2** or **Tier 3**, you need to meet certain criteria:
 
 - **Tier 2**: At least **15** *active users* using your *referral codes* *per week* and a *combined weekly volume* above **$5 million**.
-- **Tier 3**: At least **30** *active users* using your *referral codes* *per week* and a *combined weekly volume* above *$25 million*.
+- **Tier 3**: At least **30** *active users* using your *referral codes* *per week* and a *combined weekly volume* above **$25 million**.
 
 If you fulfill these criteria, please contact the team in [Discord](https://discord.gg/TR7zzfT2ru) or [Telegram](https://t.me/MorphexFTM) to *upgrade your code*.
 
