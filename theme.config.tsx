@@ -40,7 +40,7 @@ const config: DocsThemeConfig = {
     text: (
       <span>
         GPL-3.0 {new Date().getFullYear()} ©{" "}
-        <a href="https://github.com/morphex-labs/morphex" target="_blank">
+        <a href="https://github.com/morphex-labs" target="_blank">
           Morphex Labs
         </a>
       </span>
