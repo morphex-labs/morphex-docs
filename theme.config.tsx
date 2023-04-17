@@ -6,7 +6,7 @@ import Image from "next/image";
 const config: DocsThemeConfig = {
   logo: <Image src={Logo} width={50} height={50} alt="Morphex Labs" />,
   project: {
-    link: "https://github.com/morphex-labs/morphex",
+    link: "https://github.com/morphex-labs",
   },
   chat: {
     link: "https://discord.com/invite/TR7zzfT2ru",
