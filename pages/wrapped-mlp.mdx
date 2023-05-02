@@ -8,17 +8,6 @@ The **wMLP** vault is based on the latest Yearn vault architecture. It accepts *
 
 The vault receipt tokens of the **MLP** vault, **wMLP**, is whitelisted on Scream to be used as interest-bearing collateral, and is exclusive to **Morphex**’s MLP. An *external oracle* pulls the price of **MLP** from the **MlpManager** contract, and factors in the increasing exchange rate of **MLP** to **wMLP**. This price is then used to determine its collateral price on **Scream**.
 
-> - Starting LTV: 25%  
-> - Starting Supply Cap: 250_000e18 (MLP’s price is ~$1)
-
-Note that these are starting values, and will be raised over time as **Morphex** liquidity grows and the system becomes more battle-tested.
-
-## Other considerations
-
-- All **Morphex** core contracts have been placed behind a *24-hour timelock* controlled by a **2/3 multisig**, which will shortly be upgraded to a *48-hour timelock* and a **3/5 multisig**. Though the multisig offers some protection of **Scream**’s users from a malicious actor (in the case of compromised keys, etc.), the timelock adds an additional buffer for **Scream**’s guardian multisig to pause markets as needed should such an emergent situation arise.
--   Note that these permission issues were inherited when forking from GMX, and were raised in Quantstamp’s [audit](https://github.com/gmx-io/gmx-contracts/blob/master/audits/Quantstamp_Audit_Report.pdf). By taking steps to address these issues, Morphex is demonstrating a strong commitment to user safety and minimizing trust wherever possible.
--   Prior to adding **wMLP** as collateral to **Scream**, a final review will take place to confirm the status of admin/gov powers in the **Morphex** system.
-
 ## Benefits
 
 By allowing users to utilize **MLP** as collateral, they are able to unlock greater *capital efficiency* on their assets, allowing them to earn auto-compounding yield and borrow against it. To cover the cost of develop and maintenance, and to add another revenue stream to help repay **Scream**’s v1 bad debt, a *7.5% performance fee* will be taken on every harvest, accumulating as *wMLP* in the Scream treasury.
