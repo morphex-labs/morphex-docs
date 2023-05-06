@@ -1,0 +1,16 @@
+# Wrapped MLP
+
+## Description
+
+The **wMLP** vault is based on the latest Yearn vault architecture. It accepts *staked* **MLP** for deposits with a simple strategy, generating yield: deposit **MLP** into **Morphex** to earn **esMPX** + **FTM** and compound all **FTM** back into **MLP**. The **esMPX** rewards will be staked for **esMPX** + **FTM** + **Multiplier Points**, again sending the **FTM** yield to be further compounded into **MLP**, and staking the earned **esMPX** and **MP**s. The wrapper is *fully liquid* and users will be able to withdraw their principal **MLP** and any earned interest from the compounding of **FTM** at any time. **wMLP** can also be used as collateral on **Scream**.
+
+## New Collateral
+
+The vault receipt tokens of the **MLP** vault, **wMLP**, is whitelisted on Scream to be used as interest-bearing collateral, and is exclusive to **Morphex**’s MLP. An *external oracle* pulls the price of **MLP** from the **MlpManager** contract, and factors in the increasing exchange rate of **MLP** to **wMLP**. This price is then used to determine its collateral price on **Scream**.
+
+## Benefits
+
+By allowing users to utilize **MLP** as collateral, they are able to unlock greater *capital efficiency* on their assets, allowing them to earn auto-compounding yield and borrow against it. To cover the cost of develop and maintenance, and to add another revenue stream to help repay **Scream**’s v1 bad debt, a *7.5% performance fee* will be taken on every harvest, accumulating as *wMLP* in the Scream treasury.
+
+## Getting Started
+To begin, navigate to the [wMLP page on our website](https://www.morphex.trade/wrapper). After depositing, you may head to [Scream's website](https://scream.sh/lend) to lend your wMLP and then use it as collateral to borrow other assets available on Scream.
