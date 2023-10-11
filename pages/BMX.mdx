@@ -124,13 +124,22 @@ When exercising Option 1 oBMX to BMX with the above discount, an exerciser would
 When exercising oBMX to wBLT-BMX for the minimum locked-LP duration of 10 days, an exerciser would receive a 25% discount from the market price of BMX based on a two-hour time-weighted average price (2-hour TWAP).
 ## oBMX Option-Revenue
 
-**60%** streamed as **wBLT** to **wBLT-BMX** LPs which will be claimable from the gauge on **Base-Velocimeter**  
-**25%** streamed as **wBLT** which will be redeemed then used to buy-back **BMX** on market, mint **oBMX**, then distribute as additional bribes on **Base-Velocimeter**  
-**15%** streamed as **wBLT** to Treasury
+- **60%** streamed as **wBLT** to **wBLT-BMX** LPs which will be claimable from the gauge on **Base-Velocimeter**  
+- **25%** streamed as **wBLT** which will be redeemed then used to buy-back **BMX** on market, mint **oBMX**, then distribute as additional bribes on **Base-Velocimeter**  
+- **15%** streamed as **wBLT** to Treasury
 
 ## Flowchart of BLT and wBLT Incentives Distribution
 
 *Reminder: **25%** of **oBMX** incentives are directed as bribes to the **wBLT-BMX** gauge each week on **Base-Velocimeter Exchange** (**BVM**).
+
+## Trading Competitions
+
+**Margin trading competitions will be recurring and held weekly**. Each competition will **begin on a Wednesday at 00:00 UTC** and end **on the next Wednesday at 00:00 UTC**, with prize distributions happening after the **previous week’s competition has finished**.
+
+-   To qualify, a minimum volume of **$10,000** (volume is calculated as the position size when closing your position) must be generated over the week, and trades opened/closed on **BMX** within the competition’s date range (each week, beginning from Wednesday) **will be eligible for prizes**. Only traders finishing in the top 10 of the leaderboard will be eligible for prizes.
+-   To view the total prize pool as well as prizes for each spot in the top 10, please check the **Leaderboard** page of the website: [](https://bmx.morphex.trade/leaderboard)[https://bmx.morphex.trade/leaderboard](https://bmx.morphex.trade/leaderboard).
+-   All trades must be performed on the **BMX** platform through the interface: [](https://bmx.morphex.trade/)[https://bmx.morphex.trade/](https://bmx.morphex.trade/)
+-   The core contributors <u>reserve the right</u> to further review and potentially disqualify any contestants if deemed to not be in good faith of the competition or malicious.
 
 ## Chainlink and Pyth: Price Feeds, Contract Automation, and CCIP Integration
 **Morphex** and **Chainlink** have worked closely together over the last two months examining how **Chainlink** can support and improve **Morphex**’s operations on all chains. As a result, we are excited to announce that **Morphex** has signed contracts with **Chainlink** for price feed integrations for **Morphex** on **Fantom** and **BMX** by **Morphex** on **BASE**. For both **Fantom** and **BASE** operations, **Morphex** will utilize **Chainlink Automation** to further decentralize infrastructure, including contract actions for keepers, revenue distribution, and more. Lastly, **BMX** token will utilize **Chainlink CCIP** to grant **BMX** the ability to move cross-chain should the need arise! **Morphex** and **Chainlink**’s collaboration is mutually supportive and as such, stay tuned for more information from **Chainlink** directly to learn more about **Morphex**’s integrations!
@@ -138,7 +147,7 @@ When exercising oBMX to wBLT-BMX for the minimum locked-LP duration of 10 days, 
 Similar to our Fantom and BNB Chain deployments, pricing for the protocol is determined by price feeds directly from both Chainlink and Pyth for the fastest and most accurate updates. Fast price updates are provided by a Pyth pricing service which our keepers then submit on-chain. Chainlink prices are used for liquidations as well as ensuring the Pyth prices are within an acceptable range for added security.
 
 ## Risk Disclosure and General Disclaimer
-There are risks associated with interacting with any smart contract or blockchain application, including the potential for vulnerabilities in the smart contract code. Some risks include smart contract risks and counterparty risks (if traders make a profit, that comes from the BLP pool), as well as bridged token risk (potential for de-pegging due to bridge security risks). Morphex requires users to read and agree to the conditions of access which clearly define and prohibit the use of Morphex for residents of the United States of America and all other Prohibited/Sanctioned Localities, including prohibiting the use of a Virtual Private Network (VPN), and other restrictions. Use of Morphex is at your own risk. Users assume full responsibility for the risks associated with using Morphex and waive any and all liability, claims, causes of action, and/or damages arising from the use of Morphex. Users represent and warrant that they understand that there are inherent risks associated with virtual currency and the underlying technologies including, without limitation, cryptography, and blockchains, and agree that Morphex is not responsible for any potential losses or damages associated with these risks. 
+There are risks associated with interacting with any smart contract or blockchain application, including the potential for vulnerabilities in the smart contract code. Some risks include smart contract risks and counterparty risks (if traders make a profit, that comes from the BLT pool), as well as bridged token risk (potential for de-pegging due to bridge security risks). Morphex requires users to read and agree to the conditions of access which clearly define and prohibit the use of Morphex for residents of the United States of America and all other Prohibited/Sanctioned Localities, including prohibiting the use of a Virtual Private Network (VPN), and other restrictions. Use of Morphex is at your own risk. Users assume full responsibility for the risks associated with using Morphex and waive any and all liability, claims, causes of action, and/or damages arising from the use of Morphex. Users represent and warrant that they understand that there are inherent risks associated with virtual currency and the underlying technologies including, without limitation, cryptography, and blockchains, and agree that Morphex is not responsible for any potential losses or damages associated with these risks. 
 
 ## Summary
 **BMX** by **Morphex** innovates upon the generic GMX model by removing escrowed tokens and single-staking entirely. Through our innovative design model, BMX allows access of the underlying liquidity that forms **BLT**, our GLP equivalent. This is done through our native yearn-architectured, auto-compounding vault token, wBLT. Additionally, we have paired **wBLT** with our native-protocol token, **BMX**, to form our native liquidity pair (**wBLT-BMX**) without the need for a wETH or second native liquidity pair.
