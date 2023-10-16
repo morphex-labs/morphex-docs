@@ -117,12 +117,14 @@ a **higher leverage** and _keep the position open_ for _longer periods of time_.
 Always keep in mind the **current liquidation price**. If there is any **collateral** _left_ after **losses**
 and **fees** _are subtracted_, that amount _will be returned to your account_.
 
-## Pricing
+## Pricing and precision
 
 **Trades** on **Morphex** _do not affect the price_, so you can _make_ **large trades** at the **mark price**.
 During times of **high volatility**, there may be a spread between the **Pyth price** and the **Chainlink price**.
 
 The **mark prices** are displayed next to the market name. If you have a **long position**, it _will be opened_ at the **higher price** and _closed_ at the **lower price**. If you have a **short position**, it _will be opened_ at the lower price and _closed_ at the **higher price**.
+
+Prices for assets use a precision of 3 on the smart contract level. This applies to all trading, including liquidations.
 
 ## Potential Slippage
 
