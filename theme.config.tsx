@@ -28,14 +28,14 @@ const config: DocsThemeConfig = {
       />
     </>
   ),
-  banner: {
-    key: "1.0-release",
-    text: (
-      <a href="https://morphex.trade/" target="_blank">
-        🎉 Morphex v1.0.0 is released. Visit site →
-      </a>
-    ),
-  },
+  // banner: {
+  //   key: "1.0-release",
+  //   text: (
+  //     <a href="https://morphex.trade/" target="_blank">
+  //       🎉 Morphex v1.0.0 is released. Visit site →
+  //     </a>
+  //   ),
+  // },
   footer: {
     text: (
       <span>
