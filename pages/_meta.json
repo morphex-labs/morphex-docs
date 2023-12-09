@@ -8,13 +8,23 @@
   "wrapped-mlp": "Wrapped MLP",
   "referrals": "Referrals",
   "contracts": "Contracts",
-  "BMX": "BMX",
+  "bmx": {
+    "bmx": "BMX",
+    "blt": "BLT",
+    "wblt": "wBLT",
+    "tokenomics": "Tokenomics",
+    "trading-competitions": "Trading Competitions",
+    "oracles": "Oracles",
+    "risks": "Risks and Disclaimer"
+  }
+  "morphies-nft": "Morphies NFT",
+  "trading-competitions": "Trading Competitions",
   "links": "Links",
   "media-kit": "Media Kit",
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://twitter.com/MorphexFTM",
+    "href": "https://twitter.com/MorphexBMX",
     "newWindow": true
   }
 }
