@@ -8,15 +8,7 @@
   "wrapped-mlp": "Wrapped MLP",
   "referrals": "Referrals",
   "contracts": "Contracts",
-  "bmx": {
-    "bmx": "BMX",
-    "blt": "BLT",
-    "wblt": "wBLT",
-    "tokenomics": "Tokenomics",
-    "trading-competitions": "Trading Competitions",
-    "oracles": "Oracles",
-    "risks": "Risks and Disclaimer"
-  }
+  "bmx": "BMX",
   "morphies-nft": "Morphies NFT",
   "trading-competitions": "Trading Competitions",
   "links": "Links",
