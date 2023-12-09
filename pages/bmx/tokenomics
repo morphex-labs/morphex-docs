@@ -1,0 +1,76 @@
+## BMX Tokenomics & Distribution
+
+Total Supply: 10,000,000 **BMX**
+
+Incentives: 7,000,000 **BMX** as **oBMX** (70%) across ~35-months/3yrs.
+- All incentives are distributed as option-BMX tokens. 50k **oBMX** per week, static amount.
+
+Treasury: 850,000 **BMX** (8.5%)
+- Incentives have been separated from Treasury’s allocation, which cannot be used for  incentives. Treasury’s primary purpose is to support the protocol's expenses, scale the protocol, and increase protocol owned liquidity. Allocation could be used for capital rounds in the future with lock-up terms. 
+
+Team: 1,300,000 **BMX** (13%)
+- Distributed linearly over 1.5 years. 
+
+**MPX** Claimable Airdrop: 600,000 **BMX** as **oBMX** (6%)
+- Each month for six-consecutive months, 100,000 oBMX will be distributed based on a snapshot taken at random during the month. Those holding MPX, MPX-FTM, MPX-BNB, and Morphex NFTs will be able to claim their share of 100k oBMX each claim period. A new snapshot is taken randomly sometime within the 30-day window which is not announced prior to or after it has been taken. The block used for the snapshot will be posted on the UI when that claim period goes live. Claim periods will last 30-days, any unclaimed oBMX after the claim period ends is forfeited. All unclaimed oBMX will be redistributed to Morphex NFT holders in a separate claims process; more details to be announced later. Team vesting addresses are excluded from this airdrop except for NFT positions as none were allocated to team; all if any were purchased. This airdrop amount represents approximately 24% of circulating supply after the sixth distribution occurs (excluding Treasury’s allocation). 
+
+Initial Seed Liquidity: 250,000 **BMX** (2.5%) 
+- Will be paired with $25k worth of wBLT to provide a $50k TVL wBLT-BMX native liquidity pool at launch. It is important to note slippage will be high. Launch FDV will be approx. $1mm.
+
+## Tokenomics Graph
+![BMX Tokenomics Graph](https://github.com/jorphex/morphex-docs/blob/main/public/images/bmx%20graph.png?raw=true)
+
+## BMX and oBMX Emissions by Type and Month
+* Amounts shown are approximate estimates that would be distributed by the end of the listed month.
+![BMX Emissions](https://github.com/jorphex/morphex-docs/blob/main/public/images/bmx%20emissions.png?raw=true)
+
+## Approximate Total Circulating Supply at the Beginning of the Listed Month
+* Assumes 100% conversion of oBMX to BMX
+* Excludes Treasury allocation of 850,000 BMX (8.5%)
+![BMX Supply 1](https://github.com/jorphex/morphex-docs/blob/main/public/images/bmx%20supply%201.png?raw=true)
+![BMX Supply 2](https://github.com/jorphex/morphex-docs/blob/main/public/images/bmx%20supply%202.png?raw=true)
+
+## BMX Protocol Revenue
+
+**60%** to **BLT** (streamed as wETH; auto-compounded into BLT if staked in wBLT)  
+**30%** to **wBLT-BMX** LPers (direct to LP gauge streamed as wETH)  
+**10%** to Treasury
+
+## Native Incentives Distribution: oBMX
+*50k oBMX per week for ~35 months*
+
+**15%** to **BLT**  
+**60%** to **wBLT-BMX**  
+**25%** as bribes for **wBLT-BMX** LP on **Base Velocimeter** (**BVM**)
+
+## **oBMX** Exercise Options
+* **wBLT** is the payment token for all **oBMX** option exercises, however for user convenience we’ve built a contract to: accept any underlying BLT asset (wETH, wBTC, USDC, DAI), mint **wBLT**, then exercise.
+* Option exercise price is based on a two-hour, time-weighted average price (2-hour TWAP). 
+
+#### Option 1:
+- Discount for liquid **BMX** = **12%**
+- Payment in **wBLT** token
+
+#### Option 2:
+- Min **wBLT-BMX** LP discount = **25%**
+- Lock duration for min LP discount =10 days 
+- Payment in wBLT token 
+
+ (Durations between 10-days and 60-days optional, populates a scaled discount)
+
+- Max wBLT-BMX LP discount = **65%**
+- Lock duration for max LP discount = 60 days
+- Payment in **wBLT** token
+
+When exercising Option 1 oBMX to BMX with the above discount, an exerciser would receive a 12% discount from the market price of BMX based on a two-hour time-weighted average price (2-hour TWAP).
+
+When exercising oBMX to wBLT-BMX for the minimum locked-LP duration of 10 days, an exerciser would receive a 25% discount from the market price of BMX based on a two-hour time-weighted average price (2-hour TWAP).
+## oBMX Option-Revenue
+
+- **60%** streamed as **wBLT** to **wBLT-BMX** LPs which will be claimable from the gauge on **Base-Velocimeter**  
+- **25%** streamed as **wBLT** which will be redeemed then used to buy-back **BMX** on market, mint **oBMX**, then distribute as additional bribes on **Base-Velocimeter**  
+- **15%** streamed as **wBLT** to Treasury
+
+## Flowchart of BLT and wBLT Incentives Distribution
+
+*Reminder: **25%** of **oBMX** incentives are directed as bribes to the **wBLT-BMX** gauge each week on **Base-Velocimeter Exchange** (**BVM**).
