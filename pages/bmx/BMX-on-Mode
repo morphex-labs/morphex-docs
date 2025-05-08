@@ -1,0 +1,11 @@
+## BMX on Mode
+
+BMX is deployed on Mode, an L2 network built on Optimism Superchain. All mechanics are mostly the same as BMX on Base, with the liquidity token MLT composed of ETH, Wrapped eETH, Wrapped BTC, MODE, and USDC. Similar to BLT on our deployment on Base, MLT receives fees from all trading activity on BMX on Mode.
+
+The wrapped liquidity token, wMLT, has all the benefits expected from the Yearn-architected wrapped liquidity vault token, wBLT. These include automatically fee-processed accrued fees, possible advantageous liquidity with other tokens in DEX pairs, and enhanced borrowing power due to the automatic fee-processed accrued fees in the collateral which can gradually lower loan-to-value ratio.
+
+With integration on DEXes and aggregators, swaps routed and executed through the MLT liquidity pool involving tokens in the MLT basket will accrue fees, increasing auto-fee-processed accrued fees for wMLT. This makes wMLT a robust, efficient, and powerful token to pair with other tokens.
+
+Bridge
+
+BMX token supply is unchanged, and users can easily bridge from Base to Mode through Transporter, powered by Chainlink CCIP. Bridge BMX now with this pre-populated direct link: https://app.transporter.io/?from=base&tab=token&to=mode&token=BMX
