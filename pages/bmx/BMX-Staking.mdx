@@ -1,0 +1,70 @@
+# BMX Staking: Governance and wETH Accrued Fees
+
+### **Governance Participation**
+
+BMX doubles as the protocol’s governance token. Whether you simply hold it or stake it for wETH accrued fees, or provide BMX in LP (which gives a 1.33x multiplier) every BMX in your wallet counts toward Snapshot voting power. Voting is gas‑free and executed off‑chain; passed proposals are enforced by the multisig.
+
+### **Recent Decisions Directed by BMX Holders**
+
+- **BIP‑12 – Fee Routing Realignment (Sept 2024)** → shifted Classic fee split to 70 % BLT / 20 % staking / 10 % wBLT‑BMX incentives. *Result*: 6.1 M votes, 92 % YES.
+- **Mode Deployment Parameters (Dec 2024)** → set weight targets and open‑interest caps for BMX’s Mode chain launch.
+- **Buy‑and‑Burn Budget Increase (Mar 2025)** → raised Freestyle’s BMX buy‑&‑burn allocation from 5 % to 10 % to accelerate supply deflation.
+- **wBLT Mint/Redeem Fee Curve Update (Apr 2025)** → introduced a dynamic 0.15 % minimum fee to curb arbitrage gas wars.
+
+**Get involved:** Visit the Snapshot space → https://snapshot.box/#/s:bmxonbase.eth
+
+Connect your wallet, and vote on active proposals. Stakers enjoy wETH accrued fees and a direct hand in steering protocol evolution.
+### **Staking BMX**
+
+Stake once, receive every week. A fixed slice of *each* product’s fee pool is converted to wETH and streamed to staked BMX. The slice size is product‑specific-
+
+### **Fee Direction Per Product**
+
+Below is the exact slice of each product’s fee pool that is redirected to the single‑staking contract *before* anything else (e.g., buy‑&‑burn or BLT vault funding) happens:
+
+- **Classic** – **20 %** of every fee‑dollar generated from swaps, margin open/close, funding, liquidations, and BLT mint/redeem is swapped into wETH and streamed to BMX stakers.
+- **Freestyle** – **30 %** of intent‑fill fees (0.10 % platform fee + funding differentials) is forwarded to stakers as wETH.
+- **Based MediaX** – **60 %** of the 1.9 % marketplace fee on NFT / veAERO sales is converted to wETH for stakers.
+
+*(For clarity: Freestyle also allocates an additional 10 % of its fees to buy‑and‑burn BMX, while MediaX allocates 5 % to the same. Those buy‑&‑burn percentages are **in addition to** the staking share listed above.)*
+
+### **Where “the Fees” Actually Originate**
+
+1. **Trading Economics (Classic)** – Every leveraged trade pays an open‑/close‑fee; swaps pay 0.20 – 0.80 %; liquidations recycle collateral into the pool. Twenty percent of that rainbow routes to single‑staking.
+2. **Intent Engine (Freestyle)** – Instead of an order‑book, each filled intent pays a 0.10 % fee + funding differentials. Thirty percent of those fills show up in the staking contract.
+3. **On‑chain Media (MediaX)** – Each avatar/NFT/veAERO sale pays 1.9 %. Sixty percent hits the staking pool; another 5 % buys & burns BMX.
+
+### **Recent Numbers (8 h‑old Dune sample)**
+| **Metric** | **Value** |
+| --- | --- |
+| Lifetime fees accrued | $2.45 M |
+| Total BMX staked | 1,802,278 BMX |
+| $ value staked | $3.13 M |
+| Last‑week wETH to stakers | 7.32 wETH |
+| Realised weekly historical APR | **15.5 % (annualised)** |
+
+*Data: [**https://dune.com/bmxdefi/bmx-analytics**](https://dune.com/bmxdefi/bmx-analytics) – “Supply & Staking” tab*
+
+*Disclaimer: Past fee APR; future values may be higher or lower.*
+
+### **Multiplier Points: Fee Accrual Accelerator, Not a Token**
+
+- Accrue at 100 % APR on your staked balance.
+- Boost = MP / BMX (cap 100 %).
+- Unstaking burns MPs → designed to favour sticky stake, not mercenary farming.
+
+### **Dynamic Levers That Move Fee Accrual**
+
+- **Volume mix** – A blow‑out week on MediaX (60 % share) can double effective fee accrual vs. a lull. Conversely, Mode/Sonic volume mostly flows through Classic (20 %).
+- **Utilisation & Funding (Classic)** – High borrow utilisation raises funding payments → higher fee haul, same 20 % split.
+- **Supply deflation** – Freestyle (10 %) & MediaX (5 %) spend part of their fee pool to buy & burn BMX. Fewer tokens means a thicker wETH slice per remaining BMX.
+
+###Risks & Caveats
+| Risk | Impact | Mitigation |
+| --- | --- | --- |
+| Fee downturn | wETH drip shrinks | Multi‑product design diversifies fee sources; MediaX uncorrelated with leverage vol. |
+| ETH price crash | Dollar yield falls with ETH | Optional autocompound back into BMX to keep USD value steadier. |
+| Short‑term staking | MPs get torched on exit → lower effective APR | Strategy aligns with long‑term holders. |
+| Smart‑contract | Potential bug | Audits + multi‑sig gated upgrades. |
+
+Bottom line: depending on where the user activity is—Classic, Freestyle or MediaX—between 20 % and 60 % of the fee torrent routes to stakers. That variability is why weekly APR prints can oscillate between single‑digits and north of 20 %. Track the Dune dashboard to help guide staking decisions.
