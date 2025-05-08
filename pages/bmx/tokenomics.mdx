@@ -1,57 +1,90 @@
-## BMX Tokenomics & Distribution
+## Tokenomics
 
-### Changes
+BMX Tokenomics & Distribution
 
-- As of May 8, 2024, oBMX emissions have ended per [BIP 1](https://snapshot.org/#/bmxonbase.eth/proposal/0x813c71f096d55ac7aa6aaf1f9bc6ad0bbdf549c5287b15138d9c08eac5a8a86e), with a total of 402.7K oBMX burned as of August 14, 2024.
+Changes
+
 - BMX from team and incentives multisig addresses have been burned, with a total of 179,688 BMX (bought back with treasury wBLT) burned as of June 15, 2024.
-- Individual burns are reported in the [#burns channel on our Discord](https://discord.com/channels/892431105339306044/1208380197867622400).
+- Individual burns are reported in the #burns channel on our Discord.
 - Approximate new total supply is estimated to be 3.22M BMX (burns ongoing).
 
-Total Supply: 2.85M **BMX** as of October 14, 2024 (previously 10M)
+Total Supply: 2.85M BMX
 
-### Distribution
+Max and Circulating Supplies can be checked here: https://api-v2.morphex.trade/bmx_supply
+
+Distribution
 
 Distribution below is based on 3.22M total supply on emissions conclusion.
 
-Incentives: 2.25M **BMX** as **oBMX** (70%) across ~35-months/3yrs.
-- All incentives have been burned, there are no longer any emissions since May 08.
+Treasury: 322.61K BMX (10%)
 
-Treasury: 322.61K **BMX** (10%)
 - Incentives have been separated from Treasury’s allocation, which cannot be used for incentives unless directed by governance. Treasury’s primary purpose is to support the protocol's expenses, scale the protocol, and increase protocol owned liquidity. Allocation could be used for capital rounds in the future with lock-up terms.
-- Previously was 850k BMX before burns
 
-Team: 419.39K **BMX** (13%)
-- Scaled down to match original allocation % with new total supply after burns, was previously 1.3 million BMX
+Team: 419.39K BMX (13%)
 
-**MPX** Claimable Airdrop: 600K **BMX** as **oBMX** (18.5%)
-- Each month for six-consecutive months, 100,000 oBMX will be distributed based on a snapshot taken at random during the month. Those holding MPX, MPX-FTM, MPX-BNB, and Morphex NFTs will be able to claim their share of 100k oBMX each claim period. A new snapshot is taken randomly sometime within the 30-day window which is not announced prior to or after it has been taken. The block used for the snapshot will be posted on the UI when that claim period goes live. Claim periods will last 30-days, any unclaimed oBMX after the claim period ends is forfeited. All unclaimed oBMX will be redistributed to Morphex NFT holders in a separate claims process; more details to be announced later. Team vesting addresses are excluded from this airdrop except for NFT positions as none were allocated to team; all if any were purchased. This airdrop amount represents approximately 24% of circulating supply after the sixth distribution occurs (excluding Treasury’s allocation).
-- This is no longer active.
+MPX Claimable Airdrop: 600K BMX as oBMX (18.5%) - No Longer Active
 
-Initial Seed Liquidity: 80.65K **BMX** (2.5%) 
-- Will be paired with $25k worth of wBLT to provide a $50k TVL wBLT-BMX native liquidity pool at launch. Launch FDV is approx. $1mm.
+- Each month for six consecutive months, 100,000 oBMX were distributed based on a snapshot taken at random during the month. Those holding MPX, MPX-FTM, MPX-BNB, and Morphex NFTs were able to claim their share of 100k oBMX during each claim period. A new snapshot was taken randomly sometime within the 30-day window, which was not announced prior to or after being taken. The block used for the snapshot was posted on the UI when the respective claim period went live. Claim periods lasted 30 days, and any unclaimed oBMX after a claim period ended was forfeited. All unclaimed oBMX were redistributed to Morphex NFT holders in a separate claims process; more details were to be announced later. Team vesting addresses were excluded from this airdrop except for NFT positions, as none were allocated to the team; all, if any, were purchased. This airdrop amount represented approximately 24% of the circulating supply after the sixth distribution occurred (excluding Treasury’s allocation).
+- oBMX was an options token used in the past to claim accrued fees. oBMX is not part of BMX’s current tokenomics.
 
-## Protocol Revenue Allocation
-*Per [BIP-15](https://snapshot.box/#/s:bmxonbase.eth/proposal/0x7a834b149e9c747d071504ce947e7b475b253a36047c786f77d6b96ae303e6da)*
-### Classic:
-- **70%** to **BLT/MLT** (streamed as wETH; auto-compounded into BLT/MLT if staked in wBLT/wMLT)  
-- **10%** native liquidity incentives wBLT-BMX (all chains revenue directed to Base)
-- **20%** to BMX single-staking (all chains revenue directed to Base)
+Initial Seed Liquidity: 80.65K BMX (2.5%)
 
-### Freestyle:
-- **20%** to native liquidity incentives wBLT-BMX (all chains revenue directed to Base)
-- **40%** to BMX Classic’s liquidity token
-- **30%** to BMX single-staking (all chains revenue directed to Base)
-- **10%** to acquiring BMX on-market and burning it
+- Paired with $25k worth of wBLT to provide a $50k TVL wBLT-BMX native liquidity pool at launch. Launch FDV was approx. $1mm.
 
-### Based MediaX (on Base)
-- 60% to BMX single staking  
-- 10% to native liquidity incentives for wBLT-BMX
+### Protocol Accrued Fee Allocation
+
+Per BIP-12 ([link](https://snapshot.box/#/s:bmxonbase.eth))
+
+Classic:
+
+- 70% to BLT/MLT (streamed as wETH; auto fee-processed into BLT/MLT if staked in wBLT/wMLT)
+- 10% to liquidity incentives for wBLT-USDC and wMLT-USDC
+- 20% to BMX single staking on Base and Mode
+
+Freestyle:
+
+- 20% to liquidity incentives for wBLT-USDC and wMLT-USDC
+- 40% to BLT/MLT
+- 30% to BMX single-staking on Base and Mode
+- 10% to acquiring BMX on-market and burning it
+
+Based MediaX (on Base)
+
+- 60% to BMX single staking
+- 10% to liquidity incentives for wBLT-USDC
 - 25% to BLT
-- 5% to acquiring BMX on-market and burning it 
+- 5% to acquiring BMX on-market and burning it
 
-### Incentivized BMX Single Staking:
+Incentivized BMX Single Staking:
 
-- **No** lock up.
-- **Earn** multiplier points.
-- **Rewards:** Revenue share distributed as **wETH**.
+- No lock up.
+- Receive multiplier points.
+- Accrued fees: routed as wETH.
 - Available on Base.
+
+### **Understanding Multiplier Points (MPs)**
+
+When you stake BMX tokens — either directly or through vault strategies — you receive Multiplier Points (MPs) in addition to base accrued fees. MPs are designed to reward long-term staking without inflating BMX’s total supply.
+
+- Receiving Rate: 100% APR — if you stake 1,000 BMX for a full year, you’ll receive 1,000 MPs.
+- Boost Mechanism: MPs increase your share of wETH accrued fees received via single-staking. The more MPs you accumulate relative to your staked BMX, the greater your Boost Percentage.
+
+**Boost Percentage Formula**:
+
+Boost % = 100 * (Staked MPs) / (Staked BMX)
+
+For example, if you have 1,000 BMX staked and have received 500 MPs:
+
+Boost % = 100 * (500) / (1000) = 50%
+
+### **Claiming vs. Auto-Processing Accrued Fees**
+
+BMX’s vault design and staking system offer users flexibility in how they engage with accrued fees:
+
+- **Auto-Processing:** When auto-processing is enabled (e.g., via wBLT), accrued fees are harvested, converted to BLT, and re-deposited into the vault. This increases the vault’s total value, allowing your wBLT to auto-grow over time.
+- **Claim:** Some accrued fees (like wETH from staking) can be manually claimed. This is ideal if you want to claim accrued fees or use them elsewhere.
+
+Users can opt for **self-claiming, automated fee-processing**, or a mix of both depending on their strategy.
+
+BMX’s goal is to minimize friction in receiving — every touchpoint, whether vault or staking, is designed to maximize capital efficiency while preserving user control.
+Important Note**:** Unstaking BMX burns a proportional amount of MPs. To maintain your boost, avoid frequent unstaking.
