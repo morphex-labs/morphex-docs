@@ -1,0 +1,212 @@
+# Based MediaX
+
+1. **Introduction & Vision**
+
+Based MediaX (BMX) is an onchain media exchange designed for the era after “NFT marketplaces.” We focus on:
+
+- **Provable Fairness** – every random distribution is powered by Chainlink VRF.
+- **Creator‑Aligned Fees** – *all protocol fees are returned to BMX ecosystem token‑holders*; no new token emissions.
+    - Stake BMX [here](https://classic.bmx.trade/deli-shop/single-staking).
+- **Capital Efficiency** – price curves, multi‑currency settlement, and pooled liquidity surface better risk/return profiles for traders.
+- **Onchain First** – royalties are contract‑level.
+
+If you believe digital ownership should be transparent, fair, and fully onchain, BMX is built for you.
+
+---
+
+1. **Quick‑Start Checklist**
+2. Install or open a Base‑compatible wallet (MetaMask, Rabby, Coinbase Wallet).
+3. Bridge ETH to Base if you’re new to the network.
+4. Visit basedmediax.com → Connect Wallet.
+5. Explore Active Listings with filters for collection, listing type, currency, and price.
+6. Ready to sell? Go to List and follow the wizard.
+
+### 1. Core Concepts
+| **Term** | **Meaning** |
+| --- | --- |
+| Onchain Media | The umbrella term replacing “NFT” — avatars, art, music, video, documents. |
+| Onchain Avatar | PFP‑style collectible (e.g., Punks). |
+| Pool | Smart‑contract vault with ≥ 2 avatars offered under fixed rules. |
+| Wheel of Avatars | Front-end animation + Chainlink VRF that randomly assigns one *or more* avatars from a pool to each buyer; the wheel can be spun for multiple avatars in a single transaction. |
+| Price Curve | How pool price evolves: **Static**, **Linear** (+Δ), **Exponential** (×Δ). |
+| Lock Duration | 1–7‑day period during which sellers’ assets are escrowed. |
+| Vickrey Auction | Sealed‑bid; winner pays the second‑highest bid. |
+| English Auction | Open ascending bids; highest at expiry wins. |
+
+1. **Why BMX Instead of OpenSea / Magic Eden?**
+
+Marketplace aggregators are great for price discovery, and BMX shows both OpenSea and Magic Eden floors directly in‑app so you can benchmark instantly (look for the twin floor‑price columns on the collection table).
+
+| **Advantage** | **OpenSea & ME** | **Based Media X** |
+| --- | --- | --- |
+| Automatic on-chain royalty enforcement | ⚠️ Opt-in “lock-in” escrow; creator must enable ERC-721-C / ERC-1155-C and trading elsewhere is disabled | ✅ Enforced at contract level, automatic |
+| Provably fair randomised allocations (Chainlink VRF) | ⚠️ Random-mint style drops supported, but fairness relies on off-chain reveals / dev controls | ✅ Chainlink VRF guarantees on-chain, verifiable randomness |
+| Buy-side odds analytics | ⚠️ Basic rarity & floor stats only (no Wheel of Avatars) | ✅ Full rarity breakdown + remaining supply (via Wheel of Avatars) |
+| Multi-currency settlement pools | ❌ | ✅ |
+| Trading-fee accrues to community | Limited | 100 % of protocol fees → 60 % BMX single-staking · 25 % BLT · 10 % liquidity incentives · 5 % buy-&-burn |
+
+**Bottom line:** You never have to leave BMX—OS/ME floor prices are surfaced alongside our listings, so benchmark instantly and list where fee rebates flow back to you.
+
+1. **veAERO Listings – Why Based Media X Is the Natural Hub**
+
+**What is veAERO?**
+
+*veAERO* is the NFT that represents a locked AERO position on Aerodrome. Each veAERO NFT carries two parameters that matter to buyers: voting power (how many votes it controls in Aerodrome gauge rounds) and time to unlock (when the underlying AERO can be withdrawn).
+
+**Why list on BMX instead of OTC chats or generic NFT markets?**
+
+| **Requirement** | **OTC / Generic NFT site** | **BMX advantage** |
+| --- | --- | --- |
+| Native Base‑chain support | Often missing | ✅ Built on Base; no bridging friction |
+| Accurate gauge‑vote metadata (votes, unlock date) | ⚠️ Often missing on generic NFT sites (OpenX *does* display the data) | ✅ UI surfaces voting power & remaining lock term directly in the listing card |
+| Multi‑currency settlement | Limited | ✅ Sellers can denominate in wBLT, AERO, wETH, USDC, cbETH, etc. |
+| Fair auctions for high‑VP NFTs | ❌ | ✅ Vickrey & English auctions built‑in |
+| Fee rebates to the community | ❌ | ✅ 100 % of protocol fees → BMX ecosystem stakers |
+
+**Liquidity Flywheel**
+
+1. veAERO whales list on BMX for discovery and better execution.
+2. Smaller DAOs & yield seekers buy, gaining instant gauge power without a manual 4‑year lock.
+3. **Higher velocity of veAERO trading → more BMX fees → larger rewards pool → more sellers list here.**
+
+**Goal:** Make BMX the central trading hub for veAERO—transparent pricing, instant settlement, and deep liquidity all in one venue.
+
+1. **Seaport Integration — Turbo‑charging Bot Liquidity**
+
+**Plain‑English TL;DR:**
+
+Seaport is an open‑source order‑book that any trading bot can read and fill without touching the BMX front‑end. By speaking the same “language” as most NFT‑sniping and market‑making bots, BMX listings become programmatically tradable. That turns every listing you post into low‑friction inventory for automated traders, which means faster fills and tighter pricing for you.
+
+## How Bots Plug In
+| **Bot Activity** | **How Seaport Makes It Possible** |
+| --- | --- |
+| **Real‑time order scraping** | Bots subscribe to Seaport events and instantly see new BMX listings the moment they hit the chain. |
+| **Criteria‑based sniping** | A bot can issue one standing bid like “any veAERO with ≥ 20 k votes” and Seaport will auto‑match it against qualifying listings. |
+| **Atomic arbitrage** | Arbitrageurs can bundle a buy on BMX and a sell on another Seaport‑compatible marketplace in the *same transaction*, locking in spreads with zero risk. |
+| **Liquidity‑provision loops** | Market‑makers rotate inventory: buy under‑priced avatars on BMX, relist at target margins, or vice‑versa—all via contracts, no UI required. |
+
+**Why This Helps You as a Lister**
+
+- **Deeper Bid‑Side Liquidity** – Bots running 24/7 vacuum up mis‑priced or trending items that human buyers might miss, giving you faster exits.
+- **Tighter Spreads** – Continuous arbitrage keeps BMX prices in line with global markets, so fair value is discovered quickly.
+- **Higher Fill Probability for Auctions** – Algorithmic bidders can monitor Vickrey & English auctions and step in with size near expiry, protecting you from lowball outcomes.
+- **Zero Extra Work** – You list once on BMX; Seaport broadcasts the order. Bots (or any other venue) can fill it without additional gas or approvals from you.
+
+**Bottom line:** Seaport turns BMX into *bot‑friendly territory*. More automated takers → more reliable sales and better realised prices for every seller on the platform.
+
+## 1. Platform Tour
+
+| **Tab** | **What you’ll find** |
+| --- | --- |
+| Active Listings | All live Single, Random, and Auction listings with real‑time floor comparisons. |
+| Mint | Primary sales for new collections. Progress bars display stage & supply. |
+| List | Wizard to create Single listings, Random pools, or Auctions. |
+| My Listings | Manage your open & expired listings; withdraw assets post‑lock. |
+| Rewards | Weekly trading‑volume leaderboard and claim interface. |
+| LlamaSwap | In‑app DEX router to swap into the seller’s chosen currency. |
+
+1. **Creating Listings**
+    1. **Single Listing**
+
+Sell a specific avatar at a fixed price in the ERC‑20 of your choice or in ETH.
+
+1. **Random Pool (Wheel of Avatars)**
+2. Deposit two or more avatars.
+3. Set Sell Price – starting price per purchase.
+4. Choose Price Curve & Δ – Static / Linear / Exponential.
+5. Pick Lock Duration – 1–7 days.
+6. Select Currency – any whitelisted ERC‑20 (wETH, USDC, cbBTC, wBLT, etc.).
+7. Sign & List – assets are locked; buyers can now spin the wheel.
+8. **Auctions**
+    - **Vickrey** – Sealed bids; winner pays second‑highest (truthful‑bidding incentive).
+    - **English** – Open ascending bids; highest at expiry wins.
+  
+  **Flow on BMX**
+
+1. Seller picks **Vickrey** or **English**, reserve price, and duration (1–7 days).
+2. Buyers lock bids (Vickrey) *or* place visible offers (English).
+3. On expiry:
+    
+    • **Vickrey:** contract reveals bids, calculates winner’s payment = second‑highest bid, and refunds differences.
+    
+    • **English:** highest bid auto‑settles.
+    
+4. Net proceeds (after protocol fee) route straight to the seller’s wallet.
+5. **Auction Mechanics – Vickrey vs. English*Powered by an exclusive licensing agreement with [Sealed](https://sealed.art/), bringing fully on-chain Vickrey auctions to Base.***
+| **Feature** | **Vickrey Auction** | **English Auction** |
+| --- | --- | --- |
+| **Bid Visibility** | **Private**. All bids are encrypted on‑chain until the auction closes. | **Public**. Every bid is visible in real time. |
+| **How to Bid** | Submit one sealed bid ≥ reserve price.Gas is *refundable* if you’re out‑bid. | Place incremental bids, each higher than the current best offer. |
+| **Winner Determination** | Highest bidder wins, but pays the amount of the second‑highest bid – incentivises honest, value‑based bids. | Highest bidder at the moment the timer expires wins and pays their own bid. |
+| **Strategic Edge** | • No “sniping” risk – last‑second bids don’t beat you cheaply.• Ideal for rare grails where users may otherwise under‑state value. | • Transparent price discovery – good when true market value is unknown.• Encourages competitive bidding wars that can exceed expectations. |
+| **When to Use** | You have a 1/1 or ultra‑rare avatar and want to avoid low‑ball games. | You’re unsure of demand and prefer an open contest to maximise price. |
+
+## Price Curves – Static | Linear | Exponential
+
+| **Curve Type** | **Formula (after each sale *n*)** | **Example – Starting Price 0.05 ETH** | **When to Use** |
+| --- | --- | --- | --- |
+| **Static** | *Pn = P0* | 0.05 ETH → 0.05 ETH → 0.05 ETH … | You just want to clear inventory quickly at a fixed price. |
+| **Linear** | *Pn = P0 + (n × Δ)* | Δ = 0.01 ETH0.05 → 0.06 → 0.07 → 0.08 … | Gradually rewards early buyers while still capturing upside as pool inventory thins. |
+| **Exponential** | *Pn = P0 × (1 + Δ)^n* | Δ = 10 % (0.10)0.05 → 0.055 → 0.0605 → 0.0666 … | Scarcity premium ramps fast – great for rare‑heavy pools you expect to empty quickly. |
+
+**Key Take‑aways**
+
+- **Static** keeps entry simple; best for high‑supply, low‑variance pools.
+- **Linear** lets you pre‑define profit per sale – transparent and predictable.
+- **Exponential** compounds scarcity; small Δ creates steep climbs after a few buys, deterring late entries unless the remaining rare value justifies the jump.
+
+**Practical tip:** back‑test your curve against collection floors. A pool that starts at 1.1 × floor with a 20 % exponential Δ becomes 2.11 × floor after just four purchases—brilliant if rares remain, toxic if they’re already gone.
+
+---
+
+1. **Buying from a Pool**
+2. Open a Random pool from Active Listings.
+3. Analyse odds — price‑to‑floor ratio, rarity mix, remaining supply, time left.
+4. Click Buy (choose quantity). Wheel spins while Chainlink VRF finalises.
+5. Your avatar is revealed and lands in your wallet instantly.
+
+**Tip — Hunting Rares**: If the only rare in a pool remains after multiple buys, the probability of pulling it increases with each remaining purchase.
+
+1. **Rewards**
+
+Each Sunday at 00:00 UTC the epoch flips (when rewards campaigns are active).
+
+- Leaderboard – Top‑10 buyers *and* sellers share the fee‑rebate pool. Buyers and sellers split sales 50/50.
+- Claim Delay – Rewards become claimable 24 h after epoch end to discourage wash trading.
+
+No extra steps: trade and you’re in.
+
+1. **Fees**
+
+| Item | Payer | Amount |
+| --- | --- | --- |
+| Protocol fee | Buyer | • 1.9 % (BMX fee‑rebate pool)
+• Random listings (0.5 % to SudoSwap, 1.4 % to BMX fee‑rebate pool) |
+| Listing Tx | Seller | Standard Base gas |
+
+All protocol fees flow to BMX ecosystem token‑holders. Stake BMX here.
+
+1. **Security & Fairness**
+- **Chainlink VRF** – Verifiable proof for every random outcome.
+- **Automatic on-chain royalty enforcement** – Creator payouts are enforced at the contract level and cannot be bypassed on the BMX platform.
+- **Non‑custodial** – Assets reside in audited smart contracts; BMX never holds your keys.
+
+---
+
+1. **FAQ**
+
+**Is the Wheel of Avatars gambling?**
+
+No. Every purchase yields an avatar; randomness only decides which one.
+
+**Can sellers withdraw mid‑pool?**
+
+No. Assets are locked until the selected duration expires.
+
+**Why would I pay above floor?**
+
+You’re paying for a chance at rarer avatars whose market value exceeds the current pool price.
+
+**Does BMX have its own token?**
+
+Yes—BMX governs certain protocol upgrades and can be staked to receive accrued fees from protocol operations, but there are **no emissions**.
