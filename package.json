@@ -1,7 +1,7 @@
 {
-  "name": "morphex-docs",
+  "name": "bmx-docs",
   "version": "0.0.1",
-  "description": "Morphex Official Documentation",
+  "description": "BMX Official Documentation",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/morphex-labs/morphex"
+    "url": "git+https://github.com/morphex-labs/morphex-docs"
   },
   "author": "Morphex Labs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/morphex-labs/morphex/issues"
+    "url": "https://github.com/morphex-labs/morphex-docs/issues"
   },
-  "homepage": "https://github.com/morphex-labs/morphex#readme",
+  "homepage": "https://github.com/morphex-labs/morphex-docs#readme",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "2.0.1",
