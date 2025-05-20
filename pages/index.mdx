@@ -1,14 +1,25 @@
-# BMX
+## Definitions
+- **BMX**: Native protocol and governance token
+- **BLT**: BMX Liquidity Token, liquidity provided for traders to utilize in margin trading on Classic
+- **wBLT**: Wrapped, composable, multi-use, auto-compounding version of BLT
 
-Definitions:
-- **BMX**: Native-protocol token
-- **BLT**: BMX Liquidity Token, liquidity provided for traders to utilize
-- **wBLT**: Wrapped, composable, multi-use, auto-fee-accruing version of BLT
-- **BMX** stands for Base-MorpheX
-- Automated fee-processing: automatically depositing fees accrued back into the underlying token.
+## Overview
 
-## Summary
+BMX is a DeFi platform on Base, Mode, and Sonic offering spot, margin, and onchain media trading, requiring only a wallet connection to use. BMX currently offers 4 different products:
 
+### wBLT
+The flagship liquidity token for DeFi on Base. wBLT stands for wrapped BMX Liquidity Token and contains blue-chip assets such as cbBTC, ETH and USDC. wBLT receives a share of protocol fees harvested from trades routed through the liquidity token, as well as from inflows and outflows that maintain target weights. wBLT is a useful pairing asset on DEXes as well as pristine collateral for markets like Morpho.
+
+### BMX Classic
+A spot and margin trading platform based on GMX-v1 with a focus on capital efficiency and low fees. All trades are settled against a singular liquidity pool (BMX Liquidity Token - BLT) consisting of blue-chip assets, where a user can provide liquidity with any whitelisted asset, and in exchange, they receive LP tokens, representing their share in the diversified liquidity pool.
+
+### BMX Freestyle
+An intent-based trading platform with a focus on low fees and offering over 250+ trading markets, powered by the SYMMIO protocol.
+
+### Based MediaX
+An onchain avatar (NFT) and veAERO marketplace on Base with a fee of 1.9%, where listings with multiple avatars use Chainlink VRF to distribute randomly to buyers.
+
+### Summary
 **BMX** enhances the PDLPs (Perp DEX Liquidity Pools) model. By wrapping **BLT** into a Yearn-architected automated fee-processing vault (**wBLT**) and pairing it directly with **BMX**, the protocol eliminates the fight between trading liquidity and native token liquidity.
 
 **BMX** improves capital efficiency for the protocol by eliminating competition between trading liquidity (**BLT**) and native-protocol liquidity (pool2), and supports increased protocol accrued fees through minting and redemption fees of **wBLT**, trading activity on intents-based Freestyle, as well as all NFT/onchain media activity on **Based MediaX**.
