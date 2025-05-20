@@ -14,34 +14,23 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: "https://github.com/morphex-labs/morphex-docs/",
   useNextSeoProps() {
     return {
-      titleTemplate: "Morphex - %s",
+      titleTemplate: "BMX - %s",
     };
   },
   head: (
     <>
       <link rel="icon" type="image/x-icon" href="/favicon.svg" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:title" content="Morphex Docs" />
-      <meta
-        property="og:description"
-        content="Morphex - Decentralized Perpetual Exchange documentation"
-      />
+      <meta property="og:title" content="BMX Docs" />
+      <meta property="og:description" content="BMX documentation" />
     </>
   ),
-  // banner: {
-  //   key: "1.0-release",
-  //   text: (
-  //     <a href="https://morphex.trade/" target="_blank">
-  //       🎉 Morphex v1.0.0 is released. Visit site →
-  //     </a>
-  //   ),
-  // },
   footer: {
     text: (
       <span>
         GPL-3.0 {new Date().getFullYear()} ©{" "}
         <a href="https://github.com/morphex-labs" target="_blank">
-          Morphex Labs
+          BMX Labs
         </a>
       </span>
     ),
