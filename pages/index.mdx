@@ -1,14 +1,39 @@
-## BMX / Morphex
+## Definitions
+- **BMX**: Native protocol and governance token
+- **BLT**: BMX Liquidity Token, liquidity provided for traders to utilize in margin trading on Classic
+- **wBLT**: Wrapped, composable, multi-use, auto-compounding version of BLT
 
-<img src="/images/Morphex_Post_00.jpg" />
+## Overview
 
-**BMX** is a DeFi platform on Base and Mode offering **spot**, **margin**, and **NFT** trading,
-requiring only a wallet connection to use. We offer 3 different products:
+BMX is a DeFi platform on Base, Mode, and Sonic offering spot, margin, and onchain media trading, requiring only a wallet connection to use. BMX currently offers 4 different products:
 
-- **BMX Classic**: A spot and margin trading platform based on GMX-v1 with a focus on capital efficiency and low fees. All trades are settled against a singular liquidity pool consisting of blue-chip assets, where a user can provide liquidity with any whitelisted asset, and in exchange, they receive LP tokens, representing their share in the diversified liquidity pool.
-- **BMX Freestyle**: An intent-based trading platform with a focus on low fees and offering over 250+ trading markets, powered by the SYMMIO protocol.
-- **Based MediaX**: An onchain avatar (NFT) and veAERO marketplace on Base with a fee of 1.9%, where listings with multiple avatars use Chainlink VRF to distribute randomly to buyers.
+### wBLT
+The flagship liquidity token for DeFi on Base. wBLT stands for wrapped BMX Liquidity Token and contains blue-chip assets such as cbBTC, ETH and USDC. wBLT receives a share of protocol fees harvested from trades routed through the liquidity token, as well as from inflows and outflows that maintain target weights. wBLT is a useful pairing asset on DEXes as well as pristine collateral for markets like Morpho.
 
-**Morphex (MPX)** is the original deployment on Fantom, equivalent to BMX Classic.
+### BMX Classic
+A spot and margin trading platform based on GMX-v1 with a focus on capital efficiency and low fees. All trades are settled against a singular liquidity pool (BMX Liquidity Token - BLT) consisting of blue-chip assets, where a user can provide liquidity with any whitelisted asset, and in exchange, they receive LP tokens, representing their share in the diversified liquidity pool.
 
-Pricing for the protocol is determined by price feeds directly from Chainlink and [Pyth](https://pyth.network/) for the fastest and most accurate updates. As the protocol matures, governance will eventually decide most parameters.
+### BMX Freestyle
+An intent-based trading platform with a focus on low fees and offering over 250+ trading markets, powered by the SYMMIO protocol.
+
+### Based MediaX
+An onchain avatar (NFT) and veAERO marketplace on Base with a fee of 1.9%, where listings with multiple avatars use Chainlink VRF to distribute randomly to buyers.
+
+### Summary
+**BMX** enhances the PDLPs (Perp DEX Liquidity Pools) model. By wrapping **BLT** into a Yearn-architected automated fee-processing vault (**wBLT**) and pairing it directly with **BMX**, the protocol eliminates the fight between trading liquidity and native token liquidity.
+
+**BMX** improves capital efficiency for the protocol by eliminating competition between trading liquidity (**BLT**) and native-protocol liquidity (pool2), and supports increased protocol accrued fees through minting and redemption fees of **wBLT**, trading activity on intents-based Freestyle, as well as all NFT/onchain media activity on **Based MediaX**.
+
+The most significant innovation is the introduction of **wBLT** as a product with multiple use cases built on top of automated fee-processing of **BLT**.
+
+Some of the use cases are as follows:
+- **wBLT-BMX** native protocol liquidity
+- Pair with other assets (wBLT-(other asset)) which benefits protocols through **wBLT**’s automated fee-processing accrued fees in addition to the underlying **BLT** assets being an index of blue-chip assets
+- Collateralize **wBLT** in lending markets like Morpho to continue to receive automated fee-processing accrued fees
+- While borrowing against **wBLT** (Borrowing wBLT itself is disabled)
+- Used as a payment option for protocol salary streams, or other products/services.
+- BMX is comprised of a collective of contributors who are anonymous to one another and live all across the world, contributing to the success of the protocol alongside a powerful community. **BMX** is aligned to decentralization, self-custody, and on-chain actions, and never has access to or holds user funds.
+
+Before launching **BMX** on Base, the team operated the Morphex protocol on Fantom and BNB Chain, where it facilitated over **$500 million** in total trading volume on Fantom and more than **$65 million** on BNB. These early deployments served as the foundation in building decentralized perpetuals and automated fee-processing vaults, directly informing many of the design principles now implemented in **BMX** including productive liquidity, modular architecture, and vault-first strategies.
+
+We look forward to the future and from the team at **BMX**, thank you for taking the time to learn more about **BMX** and **wBLT** as a product. If you have any questions, comments or concerns, please feel free to reach out in Discord or on X (formerly Twitter).

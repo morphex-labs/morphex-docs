@@ -1,8 +1,13 @@
 {
   "index": "Introduction",
-  "bmx": "BMX",
-  "morphex": "Morphex",
-  "trading-guide": "Trading Guide",
+  "blt": "BLT - introducing our liquidity token",
+  "wblt": "Wrapping your BLT (wBLT) for additional utility",
+  "tokenomics": "Tokenomics",
+  "staking": "Staking BMX",
+  "bmx-on-other-chains": "BMX on other chains",
+  "freestyle": "Freestyle",
+  "based-mediax": "Based MediaX",
+  "trading-guide": "Trading Guide for Classic",
   "contracts": "Contracts",
   "oracles": "Oracles",
   "links": "Links",
@@ -11,7 +16,7 @@
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://twitter.com/BMXDeFi",
+    "href": "https://x.com/BMXDeFi",
     "newWindow": true
   }
 }
